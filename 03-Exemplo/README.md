@@ -12,6 +12,10 @@ Modificaremos o método `build()` dentro da classe estática `Builder` para vali
 
 3. O usuário deve ser maior de 18 anos (baseado na data atual).
 
+
+Se você rodar esse segundo teste, o console exibirá as mensagens de erro controladas, impedindo que objetos corrompidos ou inválidos circulem pela sua aplicação.
+
+
 ```bash
 javac *.java
 ```
