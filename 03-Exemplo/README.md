@@ -27,9 +27,11 @@ java Main
 ```text
 Saída:
 
---- Perfil Administrador ---
-Usuario{id=999, nome='Admin', sobrenome='Sistema', email='admin@empresa.com', idade=2000-01-01, genero='Não Informado'}
+Tentando criar usuário com 15 anos...
+Erro de Validação: O usuário deve ser maior de 18 anos. Idade atual: 15
 
---- Perfil Convidado ---
-Usuario{id=100, nome='Convidado', sobrenome='Visitante', email='null', idade=null, genero='null'}
+-------------------------------------
+
+Tentando criar usuário sem sobrenome...
+Erro de Validação: O sobrenome é obrigatório.
 ```
