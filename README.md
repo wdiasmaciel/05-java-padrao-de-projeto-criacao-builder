@@ -2,6 +2,8 @@
 
 # Definição
 
+Há casos em que é necessário trabalhar com objetos imutáveis. Logo, métodos setters não devem existir nas classes. Além disso, construtores com muitos parâmetros são um "anti-padrão". Utilizar o Padrão de Projeto "Builder" é ideal nesse tipo de situação. Ele vai prover uma maneira de criar objetos sem precisarmos de construtores e sem métodos setters nas classes.
+
 O Builder é um padrão de projeto criacional que permite a construção de objetos complexos passo a passo. 
 
 Ele separa a lógica de construção de um objeto da sua representação final, possibilitando que o mesmo processo de construção possa criar diferentes tipos e representações do objeto.
