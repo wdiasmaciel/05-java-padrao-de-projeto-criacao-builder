@@ -6,7 +6,7 @@ public class Usuario {
     private final String nome;
     private final String sobrenome;
     private final String email;
-    private final LocalDate idade; // Alterado de Date para LocalDate
+    private final LocalDate idade; 
     private final String genero;
 
     // Construtor privado: obriga o uso do Builder
