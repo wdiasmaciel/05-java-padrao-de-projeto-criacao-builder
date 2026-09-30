@@ -2,27 +2,29 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando um usuário completo usando o Builder
-        Usuario usuarioCompleto = new Usuario.Builder()
-                .id(1L)
-                .nome("Alex")
-                .sobrenome("Silva")
-                .email("alex.silva@email.com")
-                .idade(LocalDate.of(1995, 5, 15))
-                .genero("Masculino")
-                .build();
+        
+        // Cenário 1: Tentando criar um usuário menor de idade
+        try {
+            System.out.println("Tentando criar usuário com 15 anos...");
+            Usuario menorDeIdade = new Usuario.Builder()
+                    .nome("Lucas")
+                    .sobrenome("Mendes")
+                    .idade(LocalDate.now().minusYears(15)) // 15 anos atrás
+                    .build();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
 
-        // Criando um usuário parcial (apenas com ID e Nome) para demonstrar a flexibilidade do padrão
-        Usuario usuarioParcial = new Usuario.Builder()
-                .id(2L)
-                .nome("Maria")
-                .build();
+        System.out.println("\n-------------------------------------\n");
 
-        // Exibindo os resultados no console
-        System.out.println("--- Usuário 1 (Completo) ---");
-        System.out.println(usuarioCompleto);
-
-        System.out.println("\n--- Usuário 2 (Parcial) ---");
-        System.out.println(usuarioParcial);
+        // Cenário 2: Tentando criar um usuário sem o sobrenome (obrigatório)
+        try {
+            System.out.println("Tentando criar usuário sem sobrenome...");
+            Usuario semSobrenome = new Usuario.Builder()
+                    .nome("Roberto")
+                    .build();
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 }
